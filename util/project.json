@@ -1,0 +1,100 @@
+[
+  {
+    "id": 1,
+    "title": "Swadlincote",
+    "img": "project_img08.jpg",
+    "images": ["Swadlincote1.jpeg", "Swadlincote2.jpg", "Swadlincote3.png"],
+    "status": "Available",
+    "type": "Industrial",
+    "units": "6",
+    "description": "Former Natwest Bank on a High Street, converted into a mixed use block with retail to the ground floor, and five self contained flats to the upper parts."
+  },
+
+  {
+    "id": 3,
+    "title": "Oldswinford",
+    "img": "project_img06.jpg",
+    "images": ["Beeches1.jpg", "Beeches2.jpg", "Beeches3.jpg"],
+    "status": "Available",
+    "type": "Residential",
+    "units": "6",
+    "description": "Freehold residential block with six apartments, together with a development site for a further residential scheme. "
+  },
+  {
+    "id": 4,
+    "title": "Halesowen",
+    "img": "project_img04.jpg",
+    "images": ["Greenways1.jpg", "Greenways2.jpg"],
+    "status": "Available",
+    "type": "Residential",
+    "units": "4",
+    "description": "Freehold residential block of four self contained apartments with parking."
+  },
+
+  {
+    "id": 6,
+    "title": "Hagley",
+    "img": "project_img03.jpg",
+    "images": ["Station2.jpg", "Station1.jpg", "Station3.jpg"],
+    "status": "Available",
+    "type": "Mixed-Use",
+    "units": "5",
+    "description": "Freehold site with a commercial premises, a block of 4 self contained apartments, garages and land with development potential to the rear.",
+    "size": "5,000 sqft"
+  },
+  {
+    "id": 8,
+    "title": "Stourbridge",
+    "img": "project_img07.jpg",
+    "images": ["Swincross1.jpg", "Swincross2.jpg"],
+    "status": "Available",
+    "type": "Residential",
+    "units": "4",
+    "description": "Freehold residential block with four modern duplex apartments, providing contemporary accommodation with gardens and parking."
+  },
+  {
+    "id": 9,
+    "title": "Rowley Regis",
+    "img": "project_img02.jpg",
+    "images": ["Highstreet1.jpg"],
+    "status": "Available",
+    "type": "Mixed-Use",
+    "units": "2",
+    "description": "Former Lloyds Bank prominently located on a high street, converted into 2 self contained commercial suites with parking to the rear.",
+    "size": "5,000 sqft"
+  },
+  {
+    "id": 7,
+    "title": "Halesowen",
+    "img": "project_img05.jpg",
+    "images": ["hayseech1.jpg", "hayseech3.jpg"],
+    "status": "Available",
+    "type": "Industrial",
+    "units": "2",
+    "description": "Freehold commercial site comprising two industrial units positioned over 1 acre of land with ample parking and loading bays. ",
+    "size": "18,000 sqft"
+  },
+  {
+    "id": 2,
+    "title": "Halesowen",
+    "img": "project_img08.jpg",
+    "images": ["Beever1.jpg", "Beever2.jpg", "Beever3.jpg"],
+    "status": "Available",
+    "type": "Industrial",
+    "units": "8",
+    "description": "Freehold industrial estate with eight self-contained commercial units, set within a well-established commercial location, all benefiting from staff and customer parking. ",
+    "siteSize": "2 acres"
+  },
+
+  {
+    "id": 5,
+    "title": "Cradley Heath",
+    "img": "project_img01.jpg",
+    "images": ["Reddal1.jpg", "Reddal2.jpg"],
+    "status": "Available",
+    "type": "Commercial",
+    "units": "1",
+    "description": "Freehold function and events venue spanning over 10,000 sq ft.",
+    "size": "10,000 sqft"
+  }
+]

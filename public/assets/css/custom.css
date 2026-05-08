@@ -1,0 +1,723 @@
+/* Hayseech Road specific gallery style: letterbox with blue bars */
+.fit-contain-with-bars {
+  background-color: var(--tg-secondary-color); /* match top bar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fit-contain-with-bars img {
+  background-color: transparent;
+}
+
+/* Entry overlay */
+.entry-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--tg-secondary-color); /* full-screen blue matches top bar */
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(0%);
+  transition: transform 700ms ease-in-out;
+}
+
+.entry-overlay.exiting {
+  transform: translateY(-100%);
+}
+
+.entry-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.entry-logo {
+  width: 260px;
+  height: auto;
+  margin-bottom: 0;
+}
+
+.entry-button {
+  background: #e7dbc8; /* beige */
+  color: #0d3b66;
+  border: none;
+  padding: 12px 28px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.entry-button:hover {
+  opacity: 0.95;
+}
+
+/* Hide back-to-top while entry overlay is active */
+body.entry-active .scroll-top {
+  display: none !important;
+}
+/* Site-specific overrides */
+
+/* Cap all logo images to a maximum of 175x175 and keep aspect ratio */
+.logo img,
+.logo-two img,
+.nav-logo img,
+.footer-logo img,
+.sidebar-logo img {
+  max-width: 175px;
+  max-height: 175px;
+  height: auto;
+  width: auto;
+}
+
+/* Make sticky menu background match logo navy blue */
+.sticky-menu {
+  background-color: #001027 !important;
+}
+
+/* Make sticky menu nav items white */
+.sticky-menu .navbar-wrap ul li a {
+  color: white !important;
+}
+
+.sticky-menu .navbar-wrap > ul > li.active > a,
+.sticky-menu .navbar-wrap > ul > li:hover > a {
+  color: #cbb695 !important; /* Use logo beige for hover/active */
+}
+
+/* Make footer background match logo navy blue */
+.footer-area {
+  background-color: #001027 !important;
+}
+
+/* Center the logo in navigation */
+.navbar-wrap .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Swap logo image when sticky header activates on desktop */
+.navbar-wrap .logo img.logo-sticky {
+  display: none;
+}
+.sticky-menu .navbar-wrap .logo img.logo-default {
+  display: none !important;
+}
+.sticky-menu .navbar-wrap .logo img.logo-sticky {
+  display: inline-block !important;
+}
+
+/* Ensure proper spacing and alignment for the center logo layout */
+.navbar-wrap {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.navbar-wrap .navigation {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navbar-wrap .navigation.right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Mobile Header Styles */
+.mobile-header {
+  padding: 15px 20px !important;
+  background: #001027 !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 9998 !important;
+  border-bottom: 2px solid rgba(203, 182, 149, 0.5) !important;
+  box-shadow: 0 2px 10px rgba(0, 16, 39, 0.3) !important;
+}
+
+.mobile-header .mobile-logo img {
+  max-height: 60px;
+  width: auto;
+}
+
+.mobile-header .mobile-nav-toggler {
+  background: rgba(203, 182, 149, 0.2) !important;
+  border: 2px solid #cbb695 !important;
+  border-radius: 6px !important;
+  padding: 12px !important;
+  cursor: pointer !important;
+  font-size: 24px !important;
+  color: #cbb695 !important;
+  transition: all 0.3s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 48px !important;
+  min-height: 48px !important;
+  position: relative !important;
+  z-index: 10000 !important;
+  float: none !important;
+}
+
+.mobile-header .mobile-nav-toggler:hover {
+  color: #ffffff !important;
+  background: rgba(203, 182, 149, 0.3) !important;
+  border-color: #ffffff !important;
+  transform: scale(1.05) !important;
+}
+
+.mobile-header .mobile-nav-toggler i {
+  font-size: 24px !important;
+  display: block !important;
+  line-height: 1 !important;
+  font-weight: bold !important;
+}
+
+/* Add padding to body to account for fixed mobile header */
+@media (max-width: 991.98px) {
+  body {
+    padding-top: 85px;
+  }
+}
+
+/* Simple Mobile Dropdown Menu */
+.mobile-dropdown {
+  position: fixed;
+  top: 70px; /* sits just below fixed mobile header (~60px + padding) */
+  left: 0;
+  right: 0;
+  background: #001027;
+  border-top: 1px solid rgba(203, 182, 149, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 9990; /* below toggler (10000) but above content */
+  box-shadow: 0 4px 20px rgba(0, 16, 39, 0.5);
+}
+
+.mobile-dropdown.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Mobile dropdown navigation styles */
+.mobile-dropdown .navigation {
+  list-style: none;
+  padding: 20px;
+  margin: 0;
+}
+
+.mobile-dropdown .navigation li {
+  margin-bottom: 0;
+  border-bottom: 1px solid rgba(203, 182, 149, 0.2);
+}
+
+.mobile-dropdown .navigation li:last-child {
+  border-bottom: none;
+}
+
+.mobile-dropdown .navigation li a {
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  display: block;
+  padding: 15px 0;
+  transition: all 0.3s ease;
+}
+
+.mobile-dropdown .navigation li a:hover {
+  color: #cbb695;
+  padding-left: 10px;
+}
+
+/* Hide mobile header on desktop */
+@media (min-width: 992px) {
+  .mobile-header {
+    display: none !important;
+  }
+}
+
+/* Hide desktop header top section on mobile */
+@media (max-width: 991.98px) {
+  .header-top {
+    display: none;
+  }
+}
+
+/* Footer Mobile Centering */
+@media (max-width: 767.98px) {
+  .footer-widget {
+    text-align: center !important;
+    margin-bottom: 40px;
+  }
+  .footer-logo {
+    text-align: center !important;
+  }
+  .footer-contact {
+    text-align: center !important;
+  }
+  .footer-link {
+    text-align: center !important;
+  }
+  .footer-widget .fw-title {
+    text-align: center !important;
+  }
+}
+
+/* Featured Investments Carousel Mobile Fix */
+@media (max-width: 991.98px) {
+  .project-style-three .row {
+    flex-wrap: wrap !important;
+  }
+  .project-style-three .col-xl-5 {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  .project-style-three .col-xl-7 {
+    margin-left: 0 !important;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+  .project-style-three .swiper-container {
+    overflow: visible !important;
+  }
+  .project-style-three .project-item {
+    text-align: center;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .project-style-three {
+    padding: 80px 0 !important;
+  }
+  .project-style-three .section-title {
+    margin-bottom: 40px !important;
+  }
+  .project-style-three .section-title .title {
+    margin-bottom: 25px !important;
+    font-size: 32px !important;
+  }
+
+  /* Projects page mobile - shift content up */
+  .inner-project-area {
+    padding-top: 40px !important;
+  }
+}
+
+/* Project Details Styling */
+.project-details {
+  margin-top: 15px;
+}
+
+.project-details .detail-item {
+  margin-bottom: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.project-details .detail-item strong {
+  color: var(--tg-primary-color);
+  font-weight: 600;
+  display: inline-block;
+  min-width: 80px;
+}
+
+.project-details .detail-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Ensure all project content is left aligned */
+.project-item .project-content {
+  text-align: left !important;
+}
+
+.project-item .project-content .title {
+  text-align: left !important;
+}
+
+/* Mobile project details styling */
+@media (max-width: 767.98px) {
+  .project-details .detail-item {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+
+  .project-details .detail-item strong {
+    min-width: 70px;
+  }
+}
+
+/* Team member names and titles always visible */
+.team-content {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* About Us page mobile title padding reduction */
+@media (max-width: 767.98px) {
+  .breadcrumb-area {
+    padding-top: 100px !important;
+  }
+
+  /* Make page titles smaller on mobile */
+  .breadcrumb-content .title {
+    font-size: 36px !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .breadcrumb-area {
+    padding-top: 80px !important;
+  }
+
+  /* Make page titles even smaller on small mobile */
+  .breadcrumb-content .title {
+    font-size: 28px !important;
+  }
+}
+
+/* About Us specific - reduce gap between title and content */
+@media (max-width: 767.98px) {
+  .breadcrumb-area {
+    padding-bottom: 80px !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .breadcrumb-area {
+    padding-bottom: 60px !important;
+  }
+}
+
+/* Vision section mobile left alignment */
+@media (max-width: 767.98px) {
+  .vision-content {
+    text-align: left !important;
+    margin-left: 0px !important;
+  }
+
+  .vision-content .section-title {
+    text-align: left !important;
+  }
+
+  .vision-content .section-title .sub-title {
+    text-align: left !important;
+  }
+
+  .vision-content .section-title .title {
+    text-align: left !important;
+  }
+
+  .vision-content p {
+    text-align: left !important;
+  }
+}
+
+/* About Us mobile - switch image and text order */
+@media (max-width: 991.98px) {
+  .about-area-two .row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about-area-two .col-lg-6:first-child {
+    order: 2; /* Image goes second */
+  }
+
+  .about-area-two .col-lg-6:last-child {
+    order: 1; /* Text goes first */
+    margin-bottom: 30px;
+  }
+}
+
+/* Ensure mobile scrolling works properly */
+@media (max-width: 991.98px) {
+  body {
+    overflow-x: hidden;
+    overflow-y: auto !important;
+  }
+
+  html {
+    overflow-x: hidden;
+    overflow-y: auto !important;
+  }
+
+  /* Ensure main content can scroll */
+  main {
+    overflow-y: auto;
+  }
+}
+
+/* Footer Desktop Styling */
+@media (min-width: 992px) {
+  /* Center and enlarge footer logo */
+  .footer-logo {
+    text-align: center !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 20px 0;
+  }
+
+  .footer-logo img {
+    max-width: 200px !important;
+    max-height: 200px !important;
+    width: auto;
+    height: auto;
+  }
+
+  /* Add more gap between contact and useful links */
+  .footer-widget {
+    padding: 0 30px;
+  }
+
+  /* Specific spacing for middle column (contact) */
+  .footer-top .row .col-lg-4:nth-child(2) {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+/* Banner Mobile Responsiveness - Match Mission Section Style */
+@media (max-width: 991.98px) {
+  .banner-area-seven .banner-content .title {
+    font-size: 34px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 25px !important;
+    text-transform: uppercase;
+    word-wrap: break-word;
+  }
+
+  .banner-area-seven .banner-content p {
+    font-size: 17px !important;
+    width: 100% !important;
+    margin: 0 0 35px !important;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .banner-area-seven .banner-content .title {
+    font-size: 48px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 20px !important;
+    text-align: left;
+  }
+
+  .banner-area-seven .banner-content p {
+    font-size: 16px !important;
+    margin: 0 0 30px !important;
+    text-align: left;
+  }
+
+  .banner-area-seven {
+    padding: 120px 0 80px !important;
+  }
+
+  .banner-area-seven .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .banner-area-seven .banner-content {
+    text-align: left !important;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .banner-area-seven .banner-content .title {
+    font-size: 42px !important;
+    line-height: 1.4 !important;
+    margin-bottom: 18px !important;
+  }
+
+  .banner-area-seven .banner-content p {
+    font-size: 15px !important;
+    margin: 0 0 25px !important;
+  }
+
+  .banner-area-seven {
+    padding: 100px 0 60px !important;
+  }
+
+  .banner-area-seven .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+/* Project Gallery Styles */
+.project-gallery .gallery-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.project-gallery .gallery-container img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-gallery .gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 16, 39, 0.4);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  font-size: 14px;
+}
+
+.project-gallery .gallery-nav:hover {
+  background: rgba(0, 16, 39, 0.7);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.project-gallery .gallery-nav.prev {
+  left: 15px;
+}
+
+.project-gallery .gallery-nav.next {
+  right: 15px;
+}
+
+.project-gallery .gallery-dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.project-gallery .gallery-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.project-gallery .gallery-dot.active {
+  background: #cbb695;
+  transform: scale(1.2);
+}
+
+.project-gallery .gallery-dot:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.project-gallery .gallery-counter {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(0, 16, 39, 0.4);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 500;
+  z-index: 10;
+}
+
+/* Responsive gallery adjustments */
+@media (max-width: 767.98px) {
+  .project-gallery .gallery-nav {
+    width: 35px;
+    height: 35px;
+    font-size: 12px;
+  }
+
+  .project-gallery .gallery-nav.prev {
+    left: 10px;
+  }
+
+  .project-gallery .gallery-nav.next {
+    right: 10px;
+  }
+
+  .project-gallery .gallery-dots {
+    bottom: 10px;
+    gap: 6px;
+  }
+
+  .project-gallery .gallery-dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .project-gallery .gallery-counter {
+    top: 10px;
+    right: 10px;
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+}
+
+/* Homepage Slider Image Consistency - Simple Fix */
+.project-style-three .project-thumb img {
+  height: 450px;
+  width: 700px;
+  object-fit: cover;
+}
+
+/* Newsletter form mobile responsiveness to match Contact page */
+@media (max-width: 991.98px) {
+  .newsletter-area .section-title {
+    text-align: center !important;
+  }
+  .newsletter-area .newsletter-content {
+    width: 100% !important;
+  }
+  .newsletter-area .newsletter-form .list-wrap {
+    display: block !important;
+    padding: 0 !important;
+  }
+  .newsletter-area .newsletter-form .list-wrap li {
+    width: 100% !important;
+    margin-bottom: 15px !important;
+  }
+  .newsletter-area .newsletter-form .list-wrap li input[type="text"],
+  .newsletter-area .newsletter-form .list-wrap li input[type="email"],
+  .newsletter-area .newsletter-form .list-wrap li input[type="tel"] {
+    width: 100% !important;
+    display: block !important;
+  }
+  .newsletter-area .newsletter-form .submit-btn {
+    margin-top: 10px !important;
+  }
+  .newsletter-area .form-check {
+    margin-top: 10px !important;
+  }
+}

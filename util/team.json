@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "title": "JOHAN JOHNSON",
+        "img": "team_img01.jpg",
+        "desig": "ARCHITECT"
+    },
+    {
+        "id": 2,
+        "title": "JACOB JONES",
+        "img": "team_img02.jpg",
+        "desig": "FOUNDER"
+    },
+    {
+        "id": 3,
+        "title": "ELEANOR PENA",
+        "img": "team_img03.jpg",
+        "desig": "HEAD OF DESIGN"
+    },
+    {
+        "id": 4,
+        "title": "BESSIE COOPER",
+        "img": "team_img04.jpg",
+        "desig": "PRODUCT MANAGER"
+    },
+    {
+        "id": 5,
+        "title": "KIM SMITH",
+        "img": "team_img05.jpg",
+        "desig": "MARKETER"
+    },
+    {
+        "id": 6,
+        "title": "COURTNEY HENRY",
+        "img": "team_img06.jpg",
+        "desig": "ACCOUNT MANAGER"
+    },
+    {
+        "id": 7,
+        "title": "THERESA WEBB",
+        "img": "team_img07.jpg",
+        "desig": "ARCHITECT"
+    },
+    {
+        "id": 8,
+        "title": "BELVA BOYD",
+        "img": "team_img08.jpg",
+        "desig": "ARCHITECT"
+    },
+    {
+        "id": 9,
+        "title": "JOAN MCKINNEY",
+        "img": "team_img09.jpg",
+        "desig": "MANAGER"
+    },
+    {
+        "id": 10,
+        "title": "LESLIE ABDO",
+        "img": "team_img10.jpg",
+        "desig": "MARKETER"
+    },
+    {
+        "id": 11,
+        "title": "DAVID BRADLEY",
+        "img": "team_img11.jpg",
+        "desig": "FOUNDER"
+    },
+    {
+        "id": 12,
+        "title": "MICKEY PORTER",
+        "img": "team_img12.jpg",
+        "desig": "ARCHITECT"
+    }
+]
