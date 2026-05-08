@@ -96,5 +96,66 @@
     "units": "1",
     "description": "Freehold function and events venue spanning over 10,000 sq ft.",
     "size": "10,000 sqft"
+  },
+  {
+    "id": 10,
+    "title": "Kidderminster",
+    "img": "Kidderminster1.png",
+    "images": ["Kidderminster1.png", "Kidderminster2.png"],
+    "status": "Available",
+    "type": "Residential",
+    "units": "6",
+    "description": "Freehold residential block with 6 apartments, providing contemporary accommodation with parking close to Kidderminster town centre."
+  },
+  {
+    "id": 11,
+    "title": "Wombourne",
+    "img": "Wombourne1.jpeg",
+    "images": ["Wombourne1.jpeg", "Wombourne2.png", "Wombourne3.png", "Wombourne4.jpeg"],
+    "status": "Available",
+    "type": "Residential",
+    "units": "1",
+    "description": "A refurbished 2 bedroom family home located in Wombourne, with a front drive and rear garden."
+  },
+  {
+    "id": 12,
+    "title": "Kidderminster",
+    "img": "KidderminsterCastle1.png",
+    "images": ["KidderminsterCastle1.png"],
+    "status": "Available",
+    "type": "Residential",
+    "units": "6",
+    "description": "Freehold residential block with six self-contained apartments close to Kidderminster town centre."
+  },
+  {
+    "id": 13,
+    "title": "Derby",
+    "img": "Derby1.png",
+    "images": ["Derby1.png"],
+    "status": "Available",
+    "type": "Residential",
+    "units": "2",
+    "description": "Freehold residential property with 2 self contained flats with a garden to the rear, close to Derby city centre."
+  },
+  {
+    "id": 14,
+    "title": "Halesowen",
+    "img": "Halesowen1.png",
+    "images": ["Halesowen1.png"],
+    "status": "Available",
+    "type": "Mixed-Use",
+    "units": "3",
+    "description": "Freehold mixed use, with a retail premises to the ground floor, and 2 self contained flats."
+  },
+  {
+    "id": 15,
+    "title": "Pedmore",
+    "img": "Pedmore1.png",
+    "images": ["Pedmore1.png", "Pedmore2.png", "Pedmore3.png", "Pedmore4.png", "Pedmore5.jpg", "Pedmore6.jpg", "Pedmore7.png", "Pedmore8.png"],
+    "status": "Available",
+    "type": "Residential",
+    "units": "1",
+    "description": "A freehold 5 bedroom bungalow with planning permission for an 8 bedroom luxury home with a leisure complex.",
+    "size": "0.5 acres"
   }
 ]
